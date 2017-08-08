@@ -30,6 +30,7 @@ class UserController extends Controller
      */
     public function indexAction(Request $request)
     {
+        dump($request);exit;
         $title = '用户列表';
         $perPageLimit = $request->query->get('perPageLimit') ? $request->query->get('perPageLimit') : 20;
 
