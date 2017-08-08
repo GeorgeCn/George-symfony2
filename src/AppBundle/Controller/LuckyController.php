@@ -38,4 +38,12 @@ class LuckyController extends Controller
             '<html><body>Lucky numbers: '.$numbersList.'</body></html>'
         );
     }
+
+    /**
+     * 
+     */
+    public function ftpAction ()
+    {
+        return new Response("Hello world");
+    }
 }
