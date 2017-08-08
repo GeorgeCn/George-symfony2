@@ -84,7 +84,7 @@ class DefaultController extends Controller
         return new RedirectResponse("http://www.baidu.com");
     }
 
-
+    //保存数据到数据库中
     /**
      * @Route("/create",name="default_create")
      */
@@ -92,14 +92,32 @@ class DefaultController extends Controller
     {   
         $user = new User();
         $user->setEmail('A Foo Bar');
-        $product->setPassword('123456');
-        $product->setSex('1');
+        $user->setPassword('123456');
+        $user->setSex('1');
                 
         $em = $this->getDoctrine()->getManager();
                 
-        $em->persist($product);
+        $em->persist($user);
         $em->flush();
                 
-        return new Response('Created product id '.$product->getId());
+        return new Response('Created user id '.$user->getId());//获取创建的id
+    }
+
+    //从数据库读取数据
+    /**
+     * @Route("/read/{id}",name="default_read")
+     */
+    public function readAction ($id)
+    {
+        // $em = $this->getDoctrine()->getManager();
+        // $user =$em->getRepository('AppBundle:Books')->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $user =$em->getRepository('AppBundle:Books')->findOneBy(array("id"=>$id));
+        // if(!$product){
+        //      throw $this->createNotFoundException('No product found for id ' .$id);
+        // }
+        dump($user);
+        return new response('Created user id ');
+       //do something,想把$product对象传递给一个template等。
     }
 }

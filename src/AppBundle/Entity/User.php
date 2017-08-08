@@ -34,7 +34,7 @@ class User
     protected $sex;
 
     /**
-     * @OneToOne(targetEntity="profile",mappedBy="user")
+     * @OneToOne(targetEntity="Profile",mappedBy="user")
      */
     private $profile;
 
