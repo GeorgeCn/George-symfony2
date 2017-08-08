@@ -253,7 +253,7 @@ class UserController extends Controller
                 
         $em->persist($userLog);
         $em->flush();
+        
         return new JsonResponse(["status"=>200,"message"=>"修改成功!","jobStatus"=>$user->getIsJob()]);
     } 
-
 }
