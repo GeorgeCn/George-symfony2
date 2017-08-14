@@ -12,13 +12,11 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Books;
 
-/**
- * @Route("/default")
- */
+
 class DefaultController extends Controller
 {
     /**
-     * @Route("/index", name="homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
