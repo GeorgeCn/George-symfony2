@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
 
 /**
- * @ORM\Entity(repositoryClass="BooksRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BooksRepository")
  * @ORM\Table(name = "books")
  */
 class Books 

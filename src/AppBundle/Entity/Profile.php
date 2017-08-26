@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
 /**
- * @ORM\Entity(repositoryClass="ProfileRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfileRepository")
  * @ORM\Table(name = "profile")
  */
 class Profile 

@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Books;
+use AppBundle\Entity\Task;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
 class DefaultController extends Controller
@@ -117,5 +121,35 @@ class DefaultController extends Controller
         dump($user);
         return new response('Created user id ');
        //do something,想把$product对象传递给一个template等。
+    }
+
+    /**
+     * 渲染task表单
+     * @Route("/task", name="default_task")
+     */
+    public function taskAction (Request $request)
+    {
+        $task = new Task();
+        $task->setTask('Write a blog post');
+        $task->setDueDate(new \DateTime('tomorrow'));
+ 
+        $form = $this->createFormBuilder($task)
+            ->add('task', TextType::class)
+            ->add('dueDate', DateType::class)
+            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $task = $form->getData();
+
+            return $this->redirectToRoute('task_success');
+        }
+ 
+        return $this->render('default/task.html.twig', array(
+            'form' => $form->createView(),
+            'name' => 'George',
+        ));
     }
 }
