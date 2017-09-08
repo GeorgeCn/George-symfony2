@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
 
@@ -9,7 +10,7 @@ use Doctrine\ORM\Mapping\OneToOne;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\Table(name = "user")
  */
-class User 
+class User extends BaseUser
 {
 	/**
 	 * @ORM\id
