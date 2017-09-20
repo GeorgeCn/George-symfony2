@@ -64,3 +64,19 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# FOSuser Configuration
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+
+# Oauth Configuration
+# hwi_oauth:
+#     firewall_name: secured_area
+#     resource_owners:
+#         # owner 的名字可以随便取，只要是唯一的名字就行
+#         qq:
+#             type:                qq
+#             client_id:           <client_id>
+#             client_secret:       <client_secret>
