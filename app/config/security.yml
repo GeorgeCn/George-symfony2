@@ -23,37 +23,22 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main:
-            pattern: ^/
-            simple_form:
-                authenticator: ip_authenticator
-                login_path: /
-                provider: custom
-                csrf_token_generator: security.csrf.token_manager
-                default_target_path: dashboard
+        secured_area:
+            pattern:    ^/
+            anonymous: true
+            logout: true
+            form_login:
+                provider: fos_user
+                csrf_provider: form.csrf_provider
+            # oauth:
+            #     resource_owners:
+            #         facebook:           "/login/check-facebook"
+            #     login_path:        /login
+            #     use_forward:       false
+            #     failure_path:      /login
 
-            logout:       true
-            anonymous:    true
-
-            remember_me:
-                secret: '%secret%'
-
-#         secured_area:
-#             pattern:    ^/
-#             anonymous: true
-#             logout: true
-#             oauth:
-#                 resource_owners:
-#                     facebook:           "/login/check-facebook"
-#                 login_path:        /login
-#                 use_forward:       false
-#                 failure_path:      /login
-
-#                 oauth_user_provider:
-#                     service: hwi_oauth.user.provider.fosub_bridge
-
-#         logout:
-#             path: /logout
+            # oauth_user_provider:
+            #     service: hwi_oauth.user.provider.fosub_bridge
 
 # access_control:
 #         - { path: ^/admin/, role: ROLE_ADMIN }

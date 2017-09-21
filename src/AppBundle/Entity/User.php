@@ -15,148 +15,78 @@ class User extends BaseUser
 	/**
 	 * @ORM\id
 	 * @ORM\Column(type="integer")
-	 * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $id;
 
-	/**
-	 * @ORM\Column(type="string")
-	 */
-	protected $email;
-
-	/**
-	 * @ORM\Column(type="string")
-	 */
-	protected $password;
-
     /**
-     * @ORM\Column(type="integer",nullable=true)
-     */
-    protected $sex;
-
-    /**
-     * @OneToOne(targetEntity="Profile",mappedBy="user")
-     */
-    private $profile;
-
-    const NAME = "George";
-
-    private static $types = null;
-    /**
-     * Get id
+     * @ORM\Column(type="string", nullable=true, length=10, options={"comment":"姓名"})
      *
-     * @return integer 
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $name;
 
     /**
-     * Set email
+     * @ORM\Column(type="string", nullable=true, length=20, options={"comment":"手机号码"})
      *
-     * @param string $email
-     * @return user
      */
-    public function setEmail($email)
+    private $mobile;
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return User
+     */
+    public function setId($id)
     {
-        $this->email = $email;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Set name
+     *
+     * @param string $name
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
      *
      * @return string 
      */
-    public function getEmail()
+    public function getName()
     {
-        return $this->email;
+        return $this->name;
     }
 
     /**
-     * Set password
+     * Set mobile
      *
-     * @param string $password
-     * @return user
+     * @param string $mobile
+     * @return User
      */
-    public function setPassword($password)
+    public function setMobile($mobile)
     {
-        $this->password = $password;
+        $this->mobile = $mobile;
 
         return $this;
     }
 
     /**
-     * Get password
+     * Get mobile
      *
      * @return string 
      */
-    public function getPassword()
+    public function getMobile()
     {
-        return $this->password;
-    }
-
-    /**
-     * Set sex
-     *
-     * @param integer $sex
-     * @return user
-     */
-    public function setSex($sex)
-    {
-        $this->sex = $sex;
-
-        return $this;
-    }
-
-    /**
-     * Get sex
-     *
-     * @return integer 
-     */
-    public function getSex()
-    {
-        return $this->sex;
-    }
-
-    /**
-     * Set profile
-     *
-     * @param \AppBundle\Entity\profile $profile
-     * @return user
-     */
-    public function setProfile(\AppBundle\Entity\profile $profile = null)
-    {
-        $this->profile = $profile;
-
-        return $this;
-    }
-
-    /**
-     * Get profile
-     *
-     * @return \AppBundle\Entity\profile 
-     */
-    public function getProfile()
-    {
-        return $this->profile;
-    }
-
-    public static function echoType($type)
-    {
-        if (empty(self::$types)) {
-            self::$types = [
-                'image' => 1,
-                'text' => 2,
-                'radio' => 3,
-                'date' => 4,
-            ];
-        }
-        if (isset(self::$types[$type])) {
-            return self::$types[$type];
-        }
-        return null;
+        return $this->mobile;
     }
 }

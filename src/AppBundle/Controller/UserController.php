@@ -27,7 +27,7 @@ class UserController extends Controller
  
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($qb, $request->query->getInt('page', 1));
-        dump($pagination);exit;
+        
         return $this->render('user/index.html.twig', [
             'pagination' => $pagination,
         ]);

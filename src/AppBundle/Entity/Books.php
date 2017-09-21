@@ -12,11 +12,11 @@ use Doctrine\ORM\Mapping\OneToOne;
 class Books 
 {
 	/**
-	 * @ORM\id
-	 * @ORM\Column(type="integer")
-	 * @ORM\GeneratedValue(strategy="AUTO")
-	 */
-	protected $id;
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+	private $id;
 
 	/**
      * @ORM\Column(type="integer", options={"comment":"用户id"})

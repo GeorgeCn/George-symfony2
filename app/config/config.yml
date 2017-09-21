@@ -68,7 +68,7 @@ swiftmailer:
 # FOSuser Configuration
 fos_user:
     db_driver: orm
-    firewall_name: main
+    firewall_name: secured_area
     user_class: AppBundle\Entity\User
 
 # Oauth Configuration
