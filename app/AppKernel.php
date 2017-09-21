@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            // new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             // new George\WebBundle\GeorgeWebBundle(),
         );
 
