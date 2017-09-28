@@ -21,3 +21,7 @@ check_qq:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+user_new:
+    pattern: /user/new
+    defaults: {_controller: AppBundle:User:new }

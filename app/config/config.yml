@@ -78,5 +78,5 @@ hwi_oauth:
         # owner 的名字可以随便取，只要是唯一的名字就行
         qq:
             type:                qq
-            client_id:           <client_id>
-            client_secret:       <client_secret>
+            client_id:           1106370503
+            client_secret:       'yj2d2xXbIMDsAcB8'

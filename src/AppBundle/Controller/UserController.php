@@ -32,4 +32,11 @@ class UserController extends Controller
             'pagination' => $pagination,
         ]);
     }
+
+    public function newAction(Request $request)
+    {
+        $data = 'Welcome';
+        
+        return $this->render('user/new.html.twig',['data'=>$data]);
+    }
 }
