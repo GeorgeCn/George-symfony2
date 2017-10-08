@@ -39,4 +39,16 @@ class UserController extends Controller
         
         return $this->render('user/new.html.twig',['data'=>$data]);
     }
+
+    /**
+     * @Route("/demo", name="user_demo")
+     * @Method("GET")
+     */
+    public function demoAction()
+    {
+        $data = 'Welcome';
+        dump(111);exit;
+        
+        return $this->render('user/new.html.twig',['data'=>$data]);
+    }
 }
