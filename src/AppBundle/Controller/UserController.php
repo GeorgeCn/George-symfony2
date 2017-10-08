@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\User;
+use AppBundle\Entity\Books;
 
 /**
  * User controller.
@@ -47,7 +48,6 @@ class UserController extends Controller
     public function demoAction()
     {
         $data = 'Welcome';
-        dump(111);exit;
         
         return $this->render('user/new.html.twig',['data'=>$data]);
     }

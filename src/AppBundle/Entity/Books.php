@@ -28,6 +28,7 @@ class Books
      */
     private $creatTime;
 
+    const STATUS_CONFIRM = 0;
 
     /**
      * Get id

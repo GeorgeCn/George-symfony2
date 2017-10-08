@@ -37,6 +37,11 @@ class User extends BaseUser
      * @param integer $id
      * @return User
      */
+
+    const STATUS_WAIT = 0;
+    const STATUS_PASS = 1;
+    const STATUS_REFUSE = 2;
+    
     public function setId($id)
     {
         $this->id = $id;
