@@ -17,3 +17,4 @@
 /UPGRADE-2.8.md
 /.gitignore
 /ftpsync.settings
+/sftp-config.json
